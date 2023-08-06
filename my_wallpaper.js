@@ -1,27 +1,27 @@
 //your parameter variables go here!
 // phoebe waz here
 //Variables for the Center Square
-let CentSqX = 150
-let CentSqY = 150
+let CentSqX = 100
+let CentSqY = 100
 let CentSqLength = 20
 let CentSqHeight = 20
 let CentSqX2 = CentSqX + CentSqLength
 let CentSqY2 = CentSqY + CentSqHeight
 
 //Variables for the "Synapses"
-let Syn1X = 70
-let Syn3Y = 10
+let Syn1X = 150
+let Syn3Y = 100
 let Syn4Y = 100
-let Syn1Length = 50
-let Syn3Height = 80
-let Syn4Height = 100
+let Syn1Length = 20
+let Syn3Height = 20
+let Syn4Height = 20
 let Syn1X2 = Syn1X + Syn1Length
 let Syn3Y2 = Syn3Y + Syn3Height
 let Syn4Y2 = Syn4Y + Syn4Height
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GLIDE_WALLPAPER); //DEVELOP_GLYPH   GRID_WALLPAPER   GLIDE_WALLPAPER 
-  pWallpaper.resolution(FIT_TO_SCREEN);  //NINE_PORTRAIT   FIT_TO_SCREEN
+  pWallpaper.resolution(NINE_PORTRAIT);  //NINE_PORTRAIT   FIT_TO_SCREEN
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -31,17 +31,12 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-
  if(CentSqY > 100) {
-
  background(126, 107, 128) //grey matter grey
  }
  else {
  background(240, 156, 230); //brain pink
  }
-
-
-  
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
@@ -86,14 +81,11 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
  arc(175, 200, 50, 50, 180, 270)
 
  if(CentSqX > 100) {
-
- fill(81, 255, 0) // electric green
+ fill(81, 255, 0) // synaptic green
  } 
  else {
-  fill(90, 232, 242) // electric blue
+ fill(90, 232, 242) // bio-electric blue
  }
-
-
  
  strokeWeight(1)
  rect(Syn1X, 1, Syn1Length, 5)
