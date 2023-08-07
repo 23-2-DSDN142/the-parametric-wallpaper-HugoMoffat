@@ -1,17 +1,17 @@
 //your parameter variables go here!
-// phoebe waz here
+
 //Variables for the Center Square
-let CentSqX = 100
-let CentSqY = 100
-let CentSqLength = 20
-let CentSqHeight = 20
+let CentSqX = 50
+let CentSqY = 150
+let CentSqLength = 100
+let CentSqHeight = 100
 let CentSqX2 = CentSqX + CentSqLength
 let CentSqY2 = CentSqY + CentSqHeight
 
 //Variables for the "Synapses"
-let Syn1X = 150
-let Syn3Y = 100
-let Syn4Y = 100
+let Syn1X = 60
+let Syn3Y = 70
+let Syn4Y = 80
 let Syn1Length = 20
 let Syn3Height = 20
 let Syn4Height = 20
@@ -20,9 +20,9 @@ let Syn3Y2 = Syn3Y + Syn3Height
 let Syn4Y2 = Syn4Y + Syn4Height
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GLIDE_WALLPAPER); //DEVELOP_GLYPH   GRID_WALLPAPER   GLIDE_WALLPAPER 
-  pWallpaper.resolution(NINE_PORTRAIT);  //NINE_PORTRAIT   FIT_TO_SCREEN
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false);
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -42,7 +42,7 @@ function wallpaper_background() {
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
  noFill();
  
- strokeWeight(0.5)
+ strokeWeight(0.5) // Background
  arc(25, 0, 50, 50, 0, 90)
  arc(25, 25, 50, 50, 90, 270)
  arc(25, 50, 50, 50, 270, 90)
@@ -80,19 +80,19 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
  arc(175, 175, 50, 50, 270, 90)
  arc(175, 200, 50, 50, 180, 270)
 
- if(CentSqX > 100) {
- fill(81, 255, 0) // synaptic green
+ if(CentSqX > 100) { //Colour changer
+ fill(81, 255, 0) // electric green
  } 
  else {
- fill(90, 232, 242) // bio-electric blue
+ fill(90, 232, 242) // electric blue
  }
  
- strokeWeight(1)
+ strokeWeight(1) //Synapse heads
  rect(Syn1X, 1, Syn1Length, 5)
  rect(Syn1X, 194, Syn1Length, 5)
  rect(1, Syn3Y, 5, Syn3Height)
  rect(194, Syn4Y, 5, Syn4Height)
- strokeWeight(2)
+ strokeWeight(2) //Synapse arms
  line(Syn1X, 6, CentSqX, CentSqY)
  line(Syn1X2, 6, CentSqX2, CentSqY)
  line(194, Syn4Y, CentSqX2, CentSqY)
